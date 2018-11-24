@@ -1,0 +1,19 @@
+# Intellij Idea project files
+.idea/**
+!.idea/checkstyle-idea.xml
+!.idea/codeStyleSettings.xml
+*.iml
+*.ipr
+*.iws
+
+# gradle config
+.gradle
+
+# project binaries
+build
+out
+classes
+
+# mac os x
+.DS_Store
+
