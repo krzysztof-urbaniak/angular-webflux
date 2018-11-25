@@ -13,15 +13,19 @@ buildscript {
 	}
 }
 
+apply plugin: 'groovy'
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
+apply plugin: "kotlin-allopen"
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.urbaniak.krzysztof'
 version = '0.0.1-SNAPSHOT'
+
 sourceCompatibility = 1.8
+
 compileKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ["-Xjsr305=strict"]
@@ -45,6 +49,8 @@ dependencies {
 	implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	testImplementation("org.spockframework:spock-spring:1.1-groovy-2.4")
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('io.projectreactor:reactor-test')
 }
