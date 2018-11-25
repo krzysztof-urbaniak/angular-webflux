@@ -1,0 +1,4 @@
+news-client:
+  scheme: https
+  host: newsapi.org
+  apiKey: 8ede0263f6504149b1d5e9ede2954b4c

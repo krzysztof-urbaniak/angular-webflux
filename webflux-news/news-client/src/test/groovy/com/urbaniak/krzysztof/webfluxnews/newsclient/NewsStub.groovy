@@ -3,6 +3,7 @@ package com.urbaniak.krzysztof.webfluxnews.newsclient
 import com.github.tomakehurst.wiremock.client.MappingBuilder
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.matching.RequestPatternBuilder
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpHeaders
 import org.springframework.http.MediaType
 
@@ -13,6 +14,9 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlMatching
 import static com.github.tomakehurst.wiremock.client.WireMock.verify
 
 trait NewsStub {
+
+    @Value("\${news-client.apiKey}")
+    String apiKey
 
     private def PATH = "/v2/top-headlines"
 
@@ -43,7 +47,7 @@ trait NewsStub {
             createPath(
                 params.get("country") as String,
                 params.get("category") as String,
-                params.get("apiKey") as String
+                apiKey
             ),
             status,
             response
@@ -57,7 +61,7 @@ trait NewsStub {
             createPath(
                 params.get("country") as String,
                 params.get("category") as String,
-                params.get("apiKey") as String
+                apiKey
             )
         )
         true

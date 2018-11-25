@@ -6,10 +6,12 @@ import com.github.tomakehurst.wiremock.core.WireMockConfiguration
 import com.github.tomakehurst.wiremock.junit.WireMockClassRule
 import org.junit.ClassRule
 import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.ContextConfiguration
 import spock.lang.Shared
 import spock.lang.Specification
 
+@ActiveProfiles("integration")
 @ContextConfiguration(classes = [NewsClientConfig], initializers = [ConfigFileApplicationContextInitializer])
 abstract class IntegrationSpec extends Specification {
 

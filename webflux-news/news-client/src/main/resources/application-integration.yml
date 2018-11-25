@@ -1,0 +1,10 @@
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework.web.reactive.function.client.ExchangeFunctions: DEBUG
+
+news-client:
+  scheme: http
+  host: localhost:8202
+  apiKey: secretKey

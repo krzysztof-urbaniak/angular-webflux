@@ -8,7 +8,7 @@ import org.springframework.web.util.UriBuilder
 import java.net.URI
 
 
-class NewsClient {
+class NewsClient(private val properties: NewsClientProperties) {
     private val client = WebClient.create()
 
     fun getNews(category: String, country: String) =
@@ -21,14 +21,14 @@ class NewsClient {
 
     private fun createUri(category: String, country: String): (UriBuilder) -> URI {
         return { builder ->
-            builder.scheme("http")//"https")
-                .host("localhost:8202")//"newsapi.org")
+            builder.scheme(properties.scheme)
+                .host(properties.host)
                 .path(PATH)
                 .queryParams(
                     toMultiValueMap(
                         "country" to country,
                         "category" to category,
-                        "apiKey" to "secretKey"//API_KEY
+                        "apiKey" to (properties.apiKey ?: throw ApiKeyNotProvidedException())
                     )
                 )
                 .build()
@@ -37,7 +37,6 @@ class NewsClient {
 
     companion object {
         private val PATH = "v2/top-headlines"
-        private val API_KEY = "8ede0263f6504149b1d5e9ede2954b4c"
 
         @JvmStatic
         fun toMultiValueMap(vararg pairs: Pair<String, String>): MultiValueMap<String, String> =
@@ -49,5 +48,6 @@ class NewsClient {
 
     }
 
-
 }
+
+class ApiKeyNotProvidedException : RuntimeException()
