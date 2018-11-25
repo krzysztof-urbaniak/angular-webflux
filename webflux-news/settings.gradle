@@ -1,1 +1,4 @@
 rootProject.name = 'webflux-news'
+include 'news-client'
+include 'new-app'
+
