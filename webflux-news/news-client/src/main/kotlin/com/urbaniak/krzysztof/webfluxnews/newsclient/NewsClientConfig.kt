@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration
 
 @EnableConfigurationProperties
 @Configuration
-class NewsClientConfig {
+internal class NewsClientConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "news-client")

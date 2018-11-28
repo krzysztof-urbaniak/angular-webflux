@@ -1,5 +1,7 @@
 package com.urbaniak.krzysztof.webfluxnews
 
+import com.urbaniak.krzysztof.webfluxnews.application.NewsDto
+import com.urbaniak.krzysztof.webfluxnews.infrastructure.InMemoryNewsRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType

@@ -1,9 +1,9 @@
-package com.urbaniak.krzysztof.webfluxnews
+package com.urbaniak.krzysztof.webfluxnews.application
 
 data class NewsDto(
     val country: String,
     val category: String,
-    val articles: List<ArticleDto>
+    val article: ArticleDto
 )
 
 data class ArticleDto(

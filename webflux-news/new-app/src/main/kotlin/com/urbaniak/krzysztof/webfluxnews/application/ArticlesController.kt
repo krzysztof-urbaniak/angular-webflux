@@ -1,5 +1,6 @@
-package com.urbaniak.krzysztof.webfluxnews
+package com.urbaniak.krzysztof.webfluxnews.application
 
+import com.urbaniak.krzysztof.webfluxnews.infrastructure.InMemoryNewsRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
