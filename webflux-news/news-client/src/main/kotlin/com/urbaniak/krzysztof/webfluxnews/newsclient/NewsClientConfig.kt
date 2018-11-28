@@ -18,9 +18,3 @@ internal class NewsClientConfig {
     fun newsClient(properties: NewsClientProperties) =
         NewsClient(properties)
 }
-
-class NewsClientProperties {
-    var scheme: String? = null
-    var host: String? = null
-    var apiKey: String? = null
-}

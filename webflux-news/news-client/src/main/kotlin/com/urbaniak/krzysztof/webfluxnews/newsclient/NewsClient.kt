@@ -50,4 +50,10 @@ class NewsClient(private val properties: NewsClientProperties) {
 
 }
 
+class NewsClientProperties {
+    var scheme: String? = null
+    var host: String? = null
+    var apiKey: String? = null
+}
+
 class ApiKeyNotProvidedException : RuntimeException()

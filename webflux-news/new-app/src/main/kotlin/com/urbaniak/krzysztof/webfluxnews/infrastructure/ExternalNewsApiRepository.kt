@@ -8,7 +8,7 @@ import reactor.core.publisher.toFlux
 import java.time.Instant
 
 
-class ExternalNewsApiRepository(val client: NewsClient): ArticlesRepository {
+class ExternalNewsApiRepository(private val client: NewsClient): ArticlesRepository {
 
     override fun getArticles(country: String, category: String): Flux<Article> {
         return client
