@@ -36,7 +36,7 @@ class NewsClient(private val properties: NewsClientProperties) {
     }
 
     companion object {
-        private val PATH = "v2/top-headlines"
+        private const val PATH = "v2/top-headlines"
 
         @JvmStatic
         fun toMultiValueMap(vararg pairs: Pair<String, String>): MultiValueMap<String, String> =

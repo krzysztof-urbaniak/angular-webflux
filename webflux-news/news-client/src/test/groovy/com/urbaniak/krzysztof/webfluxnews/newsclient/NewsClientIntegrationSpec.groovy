@@ -2,7 +2,7 @@ package com.urbaniak.krzysztof.webfluxnews.newsclient
 
 import org.springframework.beans.factory.annotation.Autowired
 
-class NewsResponseTest extends IntegrationSpec implements NewsStub {
+class NewsClientIntegrationSpec extends IntegrationSpec implements NewsStub {
 
     @Autowired
     NewsClient client
