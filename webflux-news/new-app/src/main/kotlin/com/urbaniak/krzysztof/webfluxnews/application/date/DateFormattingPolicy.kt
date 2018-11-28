@@ -1,4 +1,4 @@
-package com.urbaniak.krzysztof.webfluxnews.application
+package com.urbaniak.krzysztof.webfluxnews.application.date
 
 import java.time.Instant
 

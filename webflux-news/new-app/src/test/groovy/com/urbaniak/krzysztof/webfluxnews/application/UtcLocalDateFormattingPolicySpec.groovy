@@ -1,5 +1,6 @@
 package com.urbaniak.krzysztof.webfluxnews.application
 
+import com.urbaniak.krzysztof.webfluxnews.application.date.UtcLocalDateFormattingPolicy
 import spock.lang.Specification
 import spock.lang.Unroll
 

@@ -1,7 +1,7 @@
 package com.urbaniak.krzysztof.webfluxnews.infrastructure
 
-import com.urbaniak.krzysztof.webfluxnews.application.ArticleDto
-import com.urbaniak.krzysztof.webfluxnews.application.NewsDto
+import com.urbaniak.krzysztof.webfluxnews.application.dto.ArticleDto
+import com.urbaniak.krzysztof.webfluxnews.application.dto.NewsDto
 import org.springframework.stereotype.Repository
 
 @Repository

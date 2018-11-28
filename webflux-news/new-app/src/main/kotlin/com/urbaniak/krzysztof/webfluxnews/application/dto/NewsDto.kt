@@ -1,4 +1,4 @@
-package com.urbaniak.krzysztof.webfluxnews.application
+package com.urbaniak.krzysztof.webfluxnews.application.dto
 
 data class NewsDto(
     val country: String,
