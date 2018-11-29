@@ -16,5 +16,5 @@ internal class NewsClientConfig {
 
     @Bean
     fun newsClient(properties: NewsClientProperties) =
-        NewsClient(properties)
+        NewsClient(UriAssembler(properties))
 }

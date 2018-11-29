@@ -16,7 +16,7 @@ class NewsClientIntegrationSpec extends IntegrationSpec implements NewsStub {
 
         stubForGet(
             ["category": category,
-            "country": country],
+             "country" : country],
             responseBody
         )
 

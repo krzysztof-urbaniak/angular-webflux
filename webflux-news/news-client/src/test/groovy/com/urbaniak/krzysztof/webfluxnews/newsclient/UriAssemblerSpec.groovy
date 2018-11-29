@@ -5,13 +5,13 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 
-class NewsClientSpec extends Specification {
+class UriAssemblerSpec extends Specification {
 
     @Unroll
     def "should convert pair: #pair to map: #map"() {
 
         when:
-        def result = NewsClient.toMultiValueMap(pair)
+        def result = UriAssembler.toMultiValueMap(pair)
 
         then:
         result == map
@@ -31,10 +31,9 @@ class NewsClientSpec extends Specification {
         def expectedMap = ["content": ["json"], "one": ["two"]]
 
         when:
-        def result = NewsClient.toMultiValueMap(firstPair, secondPair)
+        def result = UriAssembler.toMultiValueMap(firstPair, secondPair)
 
         then:
         result == expectedMap
     }
-
 }
