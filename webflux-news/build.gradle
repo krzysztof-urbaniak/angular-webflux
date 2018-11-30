@@ -13,18 +13,22 @@ buildscript {
 	}
 }
 
-subprojects {
+allprojects {
 
 	apply plugin: 'groovy'
 	apply plugin: 'kotlin'
 	apply plugin: 'kotlin-spring'
-	apply plugin: "kotlin-allopen"
-	apply plugin: 'eclipse'
+	apply plugin: 'kotlin-allopen'
+	apply plugin: 'idea'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 
 	group = 'com.urbaniak.krzysztof'
 	version = '0.0.1-SNAPSHOT'
+
+    bootJar {
+        mainClassName = 'com.urbaniak.krzysztof.webfluxnews.WebfluxNewsApplication'
+    }
 
 	sourceCompatibility = 1.8
 
@@ -44,8 +48,7 @@ subprojects {
 	repositories {
 		mavenCentral()
 	}
-
-
+    
 	dependencies {
 		implementation('org.springframework.boot:spring-boot-starter-webflux')
 		implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
