@@ -2,6 +2,3 @@ jar {
     enabled = true
 }
 
-dependencies {
-}
-
