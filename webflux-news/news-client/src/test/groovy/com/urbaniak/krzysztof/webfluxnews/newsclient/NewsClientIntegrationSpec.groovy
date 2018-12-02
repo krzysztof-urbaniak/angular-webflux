@@ -1,6 +1,8 @@
 package com.urbaniak.krzysztof.webfluxnews.newsclient
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
+import reactor.test.StepVerifier
 
 class NewsClientIntegrationSpec extends IntegrationSpec implements NewsStub {
 
@@ -39,6 +41,46 @@ class NewsClientIntegrationSpec extends IntegrationSpec implements NewsStub {
         }
 
         verifyGetRequestWasSent(["category": category, "country": country])
+    }
+
+    def "should handle 5XX error"() {
+        given:
+        String category = "technology"
+        String country = "pl"
+
+        stubForGet(
+            ["category": category,
+             "country" : country],
+            "",
+            HttpStatus.INTERNAL_SERVER_ERROR.value()
+        )
+
+        when:
+        def response = client.getNews(category, country)
+
+        then:
+        StepVerifier.create(response)
+            .verifyError(NewsApiServerException)
+    }
+
+    def "should handle 4XX error"() {
+        given:
+        String category = "technology"
+        String country = "pl"
+
+        stubForGet(
+            ["category": category,
+             "country" : country],
+            "",
+            HttpStatus.NOT_FOUND.value()
+        )
+
+        when:
+        def response = client.getNews(category, country)
+
+        then:
+        StepVerifier.create(response)
+            .verifyError(NewsApiClientException)
     }
 
 }
