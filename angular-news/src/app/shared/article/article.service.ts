@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {Article, News} from './Article';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,18 @@ export class ArticleService {
 
   constructor() { }
 
-    getAll(): Observable<News> {
+    getAllAsync(): Observable<Article> {
         return of(
             this.getCreateSampleNews(),
             this.getCreateSampleNews()
-        );
+        ).pipe(map(data => data.article));
+    }
+
+    getAllSync(): Array<Article> {
+        return [
+            this.getCreateSampleNews(),
+            this.getCreateSampleNews()
+        ].map(i => i.article);
     }
 
     private getCreateSampleNews() {
