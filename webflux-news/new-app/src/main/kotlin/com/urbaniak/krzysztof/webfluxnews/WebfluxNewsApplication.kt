@@ -4,8 +4,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class WebfluxNewsApplication
+class WebfluxNewsApplication {
 
-fun main(args: Array<String>) {
-    runApplication<WebfluxNewsApplication>(*args)
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            runApplication<WebfluxNewsApplication>(*args)
+        }
+    }
 }
