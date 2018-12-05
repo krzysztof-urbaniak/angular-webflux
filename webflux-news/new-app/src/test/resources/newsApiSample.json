@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "totalResults": 70,
+  "articles": [
+    {
+      "source": {
+        "id": "some id",
+        "name": "Tabletowo.pl"
+      },
+      "author": "John Major",
+      "title": "Dedykowane akcesoria marki HAMMER",
+      "description": "Short description",
+      "url": "https://example.pl/2018/11/20/sample/",
+      "urlToImage": "https://image.pl/2018/11/20/sample/",
+      "publishedAt": "2018-11-20T20:40:00Z",
+      "content": null
+    }
+  ]
+}

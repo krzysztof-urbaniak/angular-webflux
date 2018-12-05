@@ -11,7 +11,7 @@ class NewsClientIntegrationSpec extends IntegrationSpec implements NewsStub {
 
     def "should get article"() {
         given:
-        String responseBody = readFile("/sample.json")
+        String responseBody = readFile("/newsApiSample.json")
 
         String category = "technology"
         String country = "pl"
