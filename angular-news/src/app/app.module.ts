@@ -6,6 +6,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {AppComponent} from './app.component';
 import {ArticleListComponent} from './article-list/article-list.component';
 import {MatListModule, MatToolbarModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import {MatListModule, MatToolbarModule} from '@angular/material';
         MatDividerModule,
         MatListModule,
         MatToolbarModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
