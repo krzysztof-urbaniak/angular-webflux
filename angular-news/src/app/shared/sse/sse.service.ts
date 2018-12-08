@@ -14,9 +14,12 @@ export class SseService {
         return new Observable(obs => {
             const es = new EventSource(url);
             es.addEventListener('message', (event: MessageEvent) => {
-                console.log(event.data);
                 obs.next(JSON.parse(event.data));
             });
+            es.onerror = () => {
+                es.close();
+            };
+            es.addEventListener('closed', () => obs.complete());
             return () => es.close();
         });
     }
