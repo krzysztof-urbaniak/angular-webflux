@@ -1,14 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
 body {
     margin: 0;
-    font-family: Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #F2F2F2;
 }
 
 mat-toolbar {
     justify-content: center;
-
 }
+
+#container {
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+#details {
+    margin: 0 20px;
+}
+
+#details.mat-list-item {
+    padding: 20px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+a.mat-raised-button {
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+mat-list-item strong {
+    padding-right: 5px;
+}
+

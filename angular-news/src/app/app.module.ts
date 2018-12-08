@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {ArticleListComponent} from './article-list/article-list.component';
 import {MatListModule, MatToolbarModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
         MatDividerModule,
         MatListModule,
         MatToolbarModule,
+        MatButtonModule,
         BrowserAnimationsModule,
         HttpClientModule
     ],
