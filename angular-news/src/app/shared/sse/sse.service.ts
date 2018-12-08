@@ -19,7 +19,6 @@ export class SseService {
             es.onerror = () => {
                 es.close();
             };
-            es.addEventListener('closed', () => obs.complete());
             return () => es.close();
         });
     }
