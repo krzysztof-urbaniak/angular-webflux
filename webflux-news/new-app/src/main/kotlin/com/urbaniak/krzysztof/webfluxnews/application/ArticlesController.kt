@@ -15,7 +15,7 @@ class ArticlesController(private val service: ArticlesService) {
         notes = "Articles are sent to the client as Server Sent Events",
         produces = MediaType.TEXT_EVENT_STREAM_VALUE
     )
-    @CrossOrigin(origins = ["http://localhost:4200"])
+    @CrossOrigin
     @GetMapping("/news/{country}/{category}", produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
     fun getArticles(
         @PathVariable(value = "country") country: String,
