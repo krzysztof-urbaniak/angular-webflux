@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+
+  webflux-news:
+    build:
+      context: ../webflux-news
+    image: webflux-news-tpd
+    ports:
+      - "8080:8080"
+    networks:
+      - network-reactive
+
+  angular-news:
+    build:
+      context: ../angular-news
+    image: angular-news-tpd
+    ports:
+      - "8900:80"
+    networks:
+      - network-reactive
+
+networks:
+  network-reactive:
