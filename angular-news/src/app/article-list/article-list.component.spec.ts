@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ArticleListComponent } from './article-list.component';
+import {ArticleListComponent} from './article-list.component';
+import {Article, ArticleService} from '../shared/article/article.service';
+import {of} from 'rxjs';
 
 describe('ArticleListComponent', () => {
-  let component: ArticleListComponent;
-  let fixture: ComponentFixture<ArticleListComponent>;
+    let component: ArticleListComponent;
+    let articleService: ArticleService;
+    let spy: any;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ArticleListComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(() => {
+        articleService = new ArticleService(null);
+        component = new ArticleListComponent(articleService);
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ArticleListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should initialize articles on create', () => {
+        // given:
+        const message = of({author: 'John'} as Article);
+        spy = spyOn(articleService, 'getArticles').and.returnValue(message);
+        // when:
+        component.ngOnInit();
+        // then:
+        expect(component.articles).toEqual([{author: 'John'} as Article]);
+    });
 });
