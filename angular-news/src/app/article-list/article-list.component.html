@@ -1,0 +1,38 @@
+<div id="container">
+    <mat-accordion>
+
+        <mat-expansion-panel *ngFor="let article of articles">
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{article.date | date : "d. MMMM"}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{article.title}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div id="details">
+                <mat-list>
+                    <div *ngIf="article.author">
+                        <mat-list-item><strong>Author:</strong>{{article.author}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div *ngIf="article.sourceName">
+                        <mat-list-item><strong>Source:</strong>{{article.sourceName}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div *ngIf="article.description">
+                        <mat-list-item><strong>Description:</strong><span>{{article.description}}</span></mat-list-item>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div *ngIf="article.articleUrl">
+                        <a mat-raised-button color="primary" target="_blank" rel="noopener noreferrer" href="{{article.articleUrl}}">Go to article</a>
+                    </div>
+                </mat-list>
+            </div>
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</div>
